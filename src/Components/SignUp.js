@@ -41,6 +41,7 @@ export default function SignUp({ onGoToLogin }) {
           formData
         );
         console.log("data sent successfully:", response.data);
+        alert("Signup  is successfull");
       } catch (error) {
         console.error("error sending data:", error);
       }
