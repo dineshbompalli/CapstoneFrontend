@@ -40,8 +40,13 @@ export default function SignUp({ onGoToLogin }) {
           "http://localhost:3000/userauth/signup",
           formData
         );
-        console.log("data sent successfully:", response.data);
-        alert("Signup  is successfullcd");
+        if (response.data.status) {
+          console.log("data sent successfully:", response.data);
+          alert("Login successful");
+        } else {
+          console.error("Login failed:", response.data.message);
+          alert(`Login failed: ${response.data.message}`);
+        }
       } catch (error) {
         console.error("error sending data:", error);
       }
